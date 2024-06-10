@@ -1,0 +1,26 @@
+CC = gcc
+CFLAGS = -Wall -std=c99
+PROGS = adder subtractor multiplier divider trmn
+
+all: $(PROGS)
+
+adder: adder.c
+	$(CC) $(CFLAGS) -o $@ $^
+
+subtractor: subtractor.c
+	$(CC) $(CFLAGS) -o $@ $^
+
+multiplier: multiplier.c
+	$(CC) $(CFLAGS) -o $@ $^
+
+divider: divider.c
+	$(CC) $(CFLAGS) -o $@ $^
+
+trmn: trmn.c
+	$(CC) $(CFLAGS) -o $@ $^
+
+run: all
+	./trmn
+
+clean:
+	rm -f $(PROGS)
